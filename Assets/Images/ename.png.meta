@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 7d1d5a40472c594449ef36b8ce404b1b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7537606087406747911
+    second: ename_0
+  - first:
+      213: 8644593609128646138
+    second: ename_1
+  - first:
+      213: -4509430938948647952
+    second: ename_2
+  - first:
+      213: 8441512713420658068
+    second: ename_3
+  - first:
+      213: 5258120853272338185
+    second: ename_4
+  - first:
+      213: 3080081655321579633
+    second: ename_5
+  - first:
+      213: -8457098399062171879
+    second: ename_6
+  - first:
+      213: -202560125306494063
+    second: ename_7
+  - first:
+      213: -135524473411264696
+    second: ename_8
+  - first:
+      213: 1622446186151271997
+    second: ename_9
+  - first:
+      213: -3638570904585958404
+    second: ename_10
+  - first:
+      213: 6269185630251772513
+    second: ename_11
+  - first:
+      213: -6657698611881088829
+    second: ename_12
+  - first:
+      213: -634588608366468309
+    second: ename_13
+  - first:
+      213: 8056285690771649109
+    second: ename_14
+  - first:
+      213: 6822335078579033122
+    second: ename_15
+  - first:
+      213: -3729533718485125342
+    second: ename_16
+  - first:
+      213: 5525748637882077618
+    second: ename_17
+  - first:
+      213: 5669982335617145937
+    second: ename_18
+  - first:
+      213: 4184308695653366932
+    second: ename_19
+  - first:
+      213: 1046606612039126326
+    second: ename_20
+  - first:
+      213: -2939611101343281943
+    second: ename_21
+  - first:
+      213: 973373023041757361
+    second: ename_22
+  - first:
+      213: -2687458900490468910
+    second: ename_23
+  - first:
+      213: -3119138860464086045
+    second: ename_24
+  - first:
+      213: -4842301472016685681
+    second: ename_25
+  - first:
+      213: 4424148360042111880
+    second: ename_26
+  - first:
+      213: -6541395588927398160
+    second: ename_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ename_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 241
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe7c4f033b056790800000000000000
+      internalID: -7537606087406747911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 228
+        width: 55
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af599b32614c7f770800000000000000
+      internalID: 8644593609128646138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 223
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f34fc8f3784b61c0800000000000000
+      internalID: -4509430938948647952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 210
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495d16a7617462570800000000000000
+      internalID: 8441512713420658068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 194
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f1f5dae0998f840800000000000000
+      internalID: 5258120853272338185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 180
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170d3a052f5aeba20800000000000000
+      internalID: 3080081655321579633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 175
+        width: 64
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fdf5d40d952aa80800000000000000
+      internalID: -8457098399062171879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 164
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193a275a3ac503df0800000000000000
+      internalID: -202560125306494063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 159
+        width: 64
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f13ff95358e1ef0800000000000000
+      internalID: -135524473411264696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 143
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3edbb0d536148610800000000000000
+      internalID: 1622446186151271997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 148
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb051e4a03318dc0800000000000000
+      internalID: -3638570904585958404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 132
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16ae32a7d1f900750800000000000000
+      internalID: 6269185630251772513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_12
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 132
+        width: 57
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c86731f26a1b93a0800000000000000
+      internalID: -6657698611881088829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 116
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23aecbd50d7137f0800000000000000
+      internalID: -634588608366468309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_14
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 111
+        width: 50
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552b187d62dadcf60800000000000000
+      internalID: 8056285690771649109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 100
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224d3619b9dcdae50800000000000000
+      internalID: 6822335078579033122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_16
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 95
+        width: 50
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2273adbc7d80e3cc0800000000000000
+      internalID: -3729533718485125342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 84
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b15f070c176fac40800000000000000
+      internalID: 5525748637882077618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_18
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 79
+        width: 50
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c1335b4e2dfae40800000000000000
+      internalID: 5669982335617145937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 63
+        width: 41
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c3ffad696a11a30800000000000000
+      internalID: 4184308695653366932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 50
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63dca222b2b468e00800000000000000
+      internalID: 1046606612039126326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_21
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 63
+        width: 51
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec83ae27476437d0800000000000000
+      internalID: -2939611101343281943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 36
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b02a587b9d128d00800000000000000
+      internalID: 973373023041757361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_23
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 36
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1cdc76e5a34bad0800000000000000
+      internalID: -2687458900490468910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 20
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3ebe87bb796b4d0800000000000000
+      internalID: -3119138860464086045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_25
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 20
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8528118770bcccb0800000000000000
+      internalID: -4842301472016685681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
+        width: 37
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883efe94e7bb56d30800000000000000
+      internalID: 4424148360042111880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ename_27
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 4
+        width: 44
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fedca2ae5b4835a0800000000000000
+      internalID: -6541395588927398160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ename_0: -7537606087406747911
+      ename_1: 8644593609128646138
+      ename_10: -3638570904585958404
+      ename_11: 6269185630251772513
+      ename_12: -6657698611881088829
+      ename_13: -634588608366468309
+      ename_14: 8056285690771649109
+      ename_15: 6822335078579033122
+      ename_16: -3729533718485125342
+      ename_17: 5525748637882077618
+      ename_18: 5669982335617145937
+      ename_19: 4184308695653366932
+      ename_2: -4509430938948647952
+      ename_20: 1046606612039126326
+      ename_21: -2939611101343281943
+      ename_22: 973373023041757361
+      ename_23: -2687458900490468910
+      ename_24: -3119138860464086045
+      ename_25: -4842301472016685681
+      ename_26: 4424148360042111880
+      ename_27: -6541395588927398160
+      ename_3: 8441512713420658068
+      ename_4: 5258120853272338185
+      ename_5: 3080081655321579633
+      ename_6: -8457098399062171879
+      ename_7: -202560125306494063
+      ename_8: -135524473411264696
+      ename_9: 1622446186151271997
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
