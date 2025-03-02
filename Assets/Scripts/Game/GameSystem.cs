@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class GameSystem : MonoBehaviour {
@@ -54,12 +55,23 @@ public class GameSystem : MonoBehaviour {
 
 	IEnumerator PatternUpdate()
 	{
-		yield return new WaitForSeconds(3);
-		StartCoroutine(Pattern1());
+		yield return new WaitForSeconds(10);
+		int random = UnityEngine.Random.Range(0, 2);
+		Debug.Log($"Pattern {random}");
+		switch (random)
+		{
+            case 0:
+                StartCoroutine(Pattern0());
+                break;
+            case 1:
+                StartCoroutine(Pattern1());
+                break;
+        }
+			
 		StartCoroutine(PatternUpdate());
     }
 
-	IEnumerator Pattern1()
+	IEnumerator Pattern0()
 	{
 		Unit tempObj;
         tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
@@ -79,5 +91,18 @@ public class GameSystem : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(0);
+    }
+
+    IEnumerator Pattern1()
+    {
+        Unit tempObj;
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(0, 300));
+        tempObj.GetComponent<EnemyUnit>().InitPattern(1);
+        yield return new WaitForSeconds(0.3f);
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj.GetComponent<EnemyUnit>().InitPattern(1);
+        yield return new WaitForSeconds(0.3f);
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj.GetComponent<EnemyUnit>().InitPattern(1);
     }
 }
