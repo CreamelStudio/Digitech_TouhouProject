@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerUnit : Unit {
 	public static PlayerUnit _instance;
+	public int power;
 	private int _attackCooldownTimer;
 	private bool _isSlow;
 

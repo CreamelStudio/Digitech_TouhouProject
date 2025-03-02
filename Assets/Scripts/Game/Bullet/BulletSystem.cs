@@ -57,4 +57,19 @@ public class BulletSystem {
 
 		return bullet;
 	}
+    public ReBullet SpawnReBullet(string sprite, int team, Vector2 position, Vector2 dir, float speed)
+    {
+        var bullet = SpawnBullet<ReBullet>(sprite, team, position, dir);
+        bullet.SetSpeed(speed);
+
+        return bullet;
+    }
+
+    public SlowBullet SpawnSlowBullet(string sprite, int team, Vector2 position, Vector2 dir, float speed)
+    {
+        var bullet = SpawnBullet<SlowBullet>(sprite, team, position, dir);
+        bullet.SetSpeed(speed);
+
+        return bullet;
+    }
 }

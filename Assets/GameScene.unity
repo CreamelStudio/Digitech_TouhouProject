@@ -900,7 +900,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmList:
-  - {fileID: 8300000, guid: 12d779813322ed348855cfa186e425a5, type: 3}
   - {fileID: 8300000, guid: 9e3a5bb8d2d10b5479a8a6c21a90ed7f, type: 3}
   - {fileID: 8300000, guid: d7d4bab3d62ddb94481894a05a31f533, type: 3}
   - {fileID: 8300000, guid: 66addc7e241f35646800e4c2afe17596, type: 3}
