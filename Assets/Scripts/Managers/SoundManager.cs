@@ -16,17 +16,17 @@ public class SoundManager {
 		go.SetActive(false);
 	}
 	
-	public void PlaySound(string key) {
+	public void PlaySound(string key, float volume) {
 		ClearEndedSounds();
 		
 		var source = Object.Instantiate(_audioObject);
-		source.clip = AssetManager.Get().GetAudioClip(key);
+		source.volume = volume;
+        source.clip = AssetManager.Get().GetAudioClip(key);
 		source.gameObject.SetActive(true);
 		
 		_playingAudios.Add(source);
 	}
 
-	// 매니저 업데이트 돌리기 귀찮아서 그냥 Play할때마다 끝난 오디오 삭제해주기 ㅋㅋ
 	public void ClearEndedSounds() {
 		var count = _playingAudios.Count;
 		for (var i = 0; i < count; i++) {

@@ -46,7 +46,7 @@ public class PlayerUnit : Unit {
 			var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position, Vector2.up, 800);
 			bullet.SetZOffset(1);
 			bullet.bulletPrefab.SetSpriteAlpha(0.5f);
-			SoundManager.Get().PlaySound("se_plst00");
+			SoundManager.Get().PlaySound("se_plst00", 0.35f);
 		}
 	}
 
