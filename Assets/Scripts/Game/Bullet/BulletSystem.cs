@@ -12,7 +12,7 @@ public class BulletSystem {
 	public BulletSystem() {
 		_instance = this;
 
-		_bulletsByTeam[0] = new List<Bullet>(32);
+		_bulletsByTeam[0] = new List<Bullet>(96);
 		_bulletsByTeam[1] = new List<Bullet>(512);
 
 		_bulletPrefab = AssetManager.Get().GetPrefab("BulletPrefab").GetComponent<BulletPrefab>();

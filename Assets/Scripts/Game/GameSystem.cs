@@ -4,12 +4,14 @@ using System.Security.Cryptography;
 using UnityEngine;
 
 public class GameSystem : MonoBehaviour {
+    public static GameSystem _instance;
 	private UnitSystem _unitSystem;
 	private BulletSystem _bulletSystem;
-	private CollisionSystem _collisionSystem;
+	public CollisionSystem _collisionSystem;
 
 	private void Start() {
-		Init();
+        _instance = this;
+        Init();
 	}
 
 	private void OnDestroy() {
@@ -58,56 +60,50 @@ public class GameSystem : MonoBehaviour {
     {
         yield return new WaitForSeconds(5);
         StartCoroutine(Pattern0());
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6.5f);
         StartCoroutine(Pattern1());
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6.5f);
         StartCoroutine(Pattern2());
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6.5f);
         StartCoroutine(Pattern3());
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6.5f);
         StartCoroutine(Pattern4());
+        StartCoroutine(PatternUpdate());
     }
 
 	IEnumerator PatternUpdate()
 	{
-		yield return new WaitForSeconds(10);
-		int random = UnityEngine.Random.Range(0, 3);
+        int random = UnityEngine.Random.Range(5, 10);
+        yield return new WaitForSeconds(random);
+        random = UnityEngine.Random.Range(0, 5);
+        StartCoroutine("Pattern" + random.ToString());
 		Debug.Log($"Pattern {random}");
-		switch (random)
-		{
-            case 0:
-                StartCoroutine(Pattern0());
-                break;
-            case 1:
-                StartCoroutine(Pattern1());
-                break;
-            case 2:
-                StartCoroutine(Pattern2());
-                break;
-        }
+		
 			
 		StartCoroutine(PatternUpdate());
     }
 
-	IEnumerator Pattern0()
+    #region pattern
+
+    IEnumerator Pattern0()
 	{
 		Unit tempObj;
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-175, 300));
 		tempObj.GetComponent<EnemyUnit>().InitPattern(0);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(0);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(0);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(0);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(0);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(0);
     }
 
@@ -117,19 +113,19 @@ public class GameSystem : MonoBehaviour {
         tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(0, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(1);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(190, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(1);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-190, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(1);
     }
     IEnumerator Pattern2()
     {
         Unit tempObj;
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy2", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy2", Constants.Team.Enemy, new Vector2(-175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(2);
         yield return new WaitForSeconds(0.6f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy2", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy2", Constants.Team.Enemy, new Vector2(175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(2);
     }
 
@@ -144,40 +140,42 @@ public class GameSystem : MonoBehaviour {
     IEnumerator Pattern4()
     {
         Unit tempObj;
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-175, 250));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-150, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-125, 250));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-175, 275));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-150, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-125, 275));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-150, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(-125, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(175, 250));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(150, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(125, 250));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(175, 275));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(150, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(125, 275));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(200, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(175, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
         yield return new WaitForSeconds(0.3f);
-        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(150, 300));
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(125, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
     }
+
+    #endregion
 }

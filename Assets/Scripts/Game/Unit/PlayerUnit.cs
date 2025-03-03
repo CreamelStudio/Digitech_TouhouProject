@@ -3,12 +3,13 @@ using UnityEngine;
 public class PlayerUnit : Unit {
 	public static PlayerUnit _instance;
 	public int power;
+	public int powerUpCount;
 	private int _attackCooldownTimer;
 	private bool _isSlow;
 
     private void Start()
     {
-		_instance = this;
+        _instance = this;
     }
 
     public override void UpdateMovement() {
@@ -38,17 +39,81 @@ public class PlayerUnit : Unit {
 	}
 
 	public override void UpdateAttack() {
+		PowerSystem._instance.PowerSet(power);
 		_attackCooldownTimer--;
 		if (_attackCooldownTimer > 0)
 			return;
 		
-		if (Input.GetKey(KeyCode.Z)) {
-			_attackCooldownTimer = 4;
-			var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position, Vector2.up, 800);
-			bullet.SetZOffset(1);
-			bullet.bulletPrefab.SetSpriteAlpha(0.5f);
-			SoundManager.Get().PlaySound("se_plst00", 0.35f);
-		}
+		if(powerUpCount % 2 == 1)
+		{
+            SoundManager.Get().PlaySound("se_powerup", 0.35f);
+            powerUpCount++;
+        }
+
+        if (Input.GetKey(KeyCode.Z)) {
+			if(power <= 49)
+			{
+                _attackCooldownTimer = 4;
+                var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position, Vector2.up, 800);
+                bullet.SetZOffset(1);
+                bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+            }
+			else if(power <= 89)
+			{
+                _attackCooldownTimer = 6;
+				if (_isSlow)
+				{
+                    var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-5, 0), Vector2.up + new Vector2(0.05f, 0), 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(5, 0), Vector2.up + new Vector2(0.05f, 0), 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+                }
+				else
+				{
+                    var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-5, 0), Vector2.up, 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(5, 0), Vector2.up, 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+                }
+
+				if (powerUpCount == 0) powerUpCount++;
+			}
+			else
+			{
+                _attackCooldownTimer = 6;
+                var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(0, 0), Vector2.up, 800);
+                bullet.SetZOffset(1);
+                bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+                if (powerUpCount == 2) powerUpCount++;
+                
+
+                if (_isSlow)
+				{
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-12, 0), Vector2.up, 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(12, 0), Vector2.up, 800);
+                    bullet.SetZOffset(1);
+                }
+				else {
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-12, 0), Vector2.up + new Vector2(-0.08f, 0), 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(12, 0), Vector2.up + new Vector2(0.08f, 0), 800);
+                    bullet.SetZOffset(1);
+                    bullet.bulletPrefab.SetSpriteAlpha(0.5f);
+                }
+            }
+        }
 	}
 
 	public override void HandleDamaged() {

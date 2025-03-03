@@ -70,6 +70,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e3f50a387b1fab45ac45e7238423026
+    m_Address: PowerItem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3e6d602fb8a5031478b28307401485eb
     m_Address: BulletPrefab
     m_ReadOnly: 0
@@ -90,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61f560e51a76d3a4d81970f79b5c2a80
+    m_Address: BigPowerItem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 67e2c0d883dabff41a823a9712c0abd0
     m_Address: se_pldead00
     m_ReadOnly: 0
@@ -102,6 +112,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7561fd0b4a5bce4488475ae6e36797a8
     m_Address: se_lazer01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78b5cbf5b1535d34683c610848260def
+    m_Address: ScoreItem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

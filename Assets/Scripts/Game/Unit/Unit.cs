@@ -11,9 +11,16 @@ public abstract class Unit : MonoBehaviour {
 	public bool isDestroyed { get; private set; }
 
 	protected UnitMovementAnimator _movementAnimator;
+	private PowerItem _powerItem;
+    private PowerItem _bigPowerItem;
+    private ScoreItem _scoreItem;
 
-	private void Awake() {
-		_movementAnimator = GetComponent<UnitMovementAnimator>();
+
+    private void Awake() {
+        _powerItem = AssetManager.Get().GetPrefab("PowerItem").GetComponent<PowerItem>();
+        _bigPowerItem = AssetManager.Get().GetPrefab("BigPowerItem").GetComponent<PowerItem>();
+        _scoreItem = AssetManager.Get().GetPrefab("ScoreItem").GetComponent<ScoreItem>();
+        _movementAnimator = GetComponent<UnitMovementAnimator>();
 	}
 	
 	public void Init() {
@@ -55,9 +62,37 @@ public abstract class Unit : MonoBehaviour {
 	public abstract void HandleDamaged();
 
 	public void Die() {
-		isDestroyed = true;
-
-		HandleDead();
+        switch (Random.Range(0, 5))
+		{
+            case 0:
+                var powerPrefab = Object.Instantiate(_powerItem);
+                powerPrefab.SetPosition(transform.position);
+                powerPrefab.SetSpeed(250);
+				break;
+            case 1:
+                powerPrefab = Object.Instantiate(_powerItem);
+                powerPrefab.SetPosition(transform.position);
+                powerPrefab.SetSpeed(250);
+                break;
+            case 2:
+                powerPrefab = Object.Instantiate(_bigPowerItem);
+                powerPrefab.SetPosition(transform.position);
+                powerPrefab.SetSpeed(250);
+                break;
+            case 3:
+                var scorePrefab = Object.Instantiate(_scoreItem);
+                scorePrefab.SetPosition(transform.position);
+                scorePrefab.SetSpeed(250);
+                break;
+            case 4:
+                scorePrefab = Object.Instantiate(_scoreItem);
+                scorePrefab.SetPosition(transform.position);
+                scorePrefab.SetSpeed(250);
+                break;
+        }
+        
+        isDestroyed = true;
+        HandleDead();
 	}
 
 	public abstract void HandleDead();

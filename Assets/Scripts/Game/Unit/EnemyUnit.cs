@@ -10,7 +10,16 @@ public class EnemyUnit : Unit {
 			case 0:
 				Invoke("Die", 5);
 				break;
-		}
+            case 1:
+                Invoke("Die", 6);
+                break;
+            case 2:
+                Invoke("Die", 5);
+                break;
+            case 3:
+                Invoke("Die", 4);
+                break;
+        }
 		patternSystem = new PatternSystem(patternValue, transform.position);
     }
 
@@ -24,6 +33,7 @@ public class EnemyUnit : Unit {
     }
 
 	public override void HandleDamaged() {
+		SoundManager.Get().PlaySound("se_damage00", 0.4f);
 	}
 
 	public override void HandleDead() {
