@@ -5,7 +5,7 @@ public class PowerItem : MonoBehaviour
 {
     private float _speed;
     public int powerUpValue;
-    private int radius = 10;
+    private int radius = 15;
 
     public void FixedUpdate()
     {
@@ -21,7 +21,7 @@ public class PowerItem : MonoBehaviour
 
     protected bool CheckIfOutsideOfScreen()
     {
-        return transform.position.x >= 370 || transform.position.x <= -370 || transform.position.y >= 290 || transform.position.y <= -290;
+        return transform.position.x >= 370 || transform.position.x <= -370 || transform.position.y <= -290;
     }
 
     public void SetSpeed(float speed)

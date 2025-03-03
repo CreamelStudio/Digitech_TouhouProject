@@ -18,6 +18,7 @@ public class CollisionSystem
             {
                 bullet.isDestroyed = true;
                 PlayerUnit._instance.Damaged(1);
+                PlayerUnit._instance.power -= 3;
             }
         }
 

@@ -18,7 +18,7 @@ public class ScoreSystem : MonoBehaviour
     {
         if(PlayerUnit._instance != null)
         {
-            score += 13;
+            score += 173;
             InitScoreText();
         }
     }

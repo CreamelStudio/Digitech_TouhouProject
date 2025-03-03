@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class ScoreItem : MonoBehaviour
 {
     private float _speed;
-    private int radius = 10;
+    private int radius = 15;
     public int scoreValue;
 
     public void FixedUpdate()
@@ -21,7 +21,7 @@ public class ScoreItem : MonoBehaviour
 
     protected bool CheckIfOutsideOfScreen()
     {
-        return transform.position.x >= 370 || transform.position.x <= -370 || transform.position.y >= 290 || transform.position.y <= -290;
+        return transform.position.x >= 370 || transform.position.x <= -370 || transform.position.y <= -290;
     }
 
     public void SetSpeed(float speed)

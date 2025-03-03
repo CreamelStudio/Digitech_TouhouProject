@@ -39,6 +39,7 @@ public class PlayerUnit : Unit {
 	}
 
 	public override void UpdateAttack() {
+		if (power <= 0) power = 0;
 		PowerSystem._instance.PowerSet(power);
 		_attackCooldownTimer--;
 		if (_attackCooldownTimer > 0)
