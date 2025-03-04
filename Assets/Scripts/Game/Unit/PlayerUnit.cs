@@ -61,7 +61,7 @@ public class PlayerUnit : Unit {
             }
 			else if(power <= 89)
 			{
-                _attackCooldownTimer = 6;
+                _attackCooldownTimer = 4;
 				if (_isSlow)
 				{
                     var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-5, 0), Vector2.up + new Vector2(0.05f, 0), 800);
@@ -87,7 +87,7 @@ public class PlayerUnit : Unit {
 			}
 			else
 			{
-                _attackCooldownTimer = 6;
+                _attackCooldownTimer = 4;
                 var bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(0, 0), Vector2.up, 800);
                 bullet.SetZOffset(1);
                 bullet.bulletPrefab.SetSpriteAlpha(0.5f);
@@ -102,6 +102,7 @@ public class PlayerUnit : Unit {
 
                     bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(12, 0), Vector2.up, 800);
                     bullet.SetZOffset(1);
+
                 }
 				else {
                     bullet.bulletPrefab.SetSpriteAlpha(0.5f);

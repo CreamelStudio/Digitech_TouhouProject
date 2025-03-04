@@ -68,6 +68,8 @@ public class GameSystem : MonoBehaviour {
         StartCoroutine(Pattern3());
         yield return new WaitForSeconds(6.5f);
         StartCoroutine(Pattern4());
+        yield return new WaitForSeconds(6.5f);
+        StartCoroutine(Pattern5());
         StartCoroutine(PatternUpdate());
     }
 
@@ -75,7 +77,7 @@ public class GameSystem : MonoBehaviour {
 	{
         int random = UnityEngine.Random.Range(5, 10);
         yield return new WaitForSeconds(random);
-        random = UnityEngine.Random.Range(0, 5);
+        random = UnityEngine.Random.Range(0, 6);
         StartCoroutine("Pattern" + random.ToString());
 		Debug.Log($"Pattern {random}");
 		
@@ -175,6 +177,18 @@ public class GameSystem : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         tempObj = _unitSystem.SpawnUnit("Unit_Enemy1", Constants.Team.Enemy, new Vector2(125, 300));
         tempObj.GetComponent<EnemyUnit>().InitPattern(4);
+    }
+
+    IEnumerator Pattern5()
+    {
+        Unit tempObj;
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy2", Constants.Team.Enemy, new Vector2(-230, 300));
+        tempObj.GetComponent<EnemyUnit>().InitPattern(5);
+
+        tempObj = _unitSystem.SpawnUnit("Unit_Enemy2", Constants.Team.Enemy, new Vector2(230, 300));
+        tempObj.GetComponent<EnemyUnit>().InitPattern(5);
+
+        yield return null;
     }
 
     #endregion

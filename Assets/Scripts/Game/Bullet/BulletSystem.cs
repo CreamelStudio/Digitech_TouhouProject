@@ -72,4 +72,12 @@ public class BulletSystem {
 
         return bullet;
     }
+
+    public StopBullet SpawnStopBullet(string sprite, int team, Vector2 position, Vector2 dir, float speed)
+    {
+        var bullet = SpawnBullet<StopBullet>(sprite, team, position, dir);
+        bullet.SetSpeed(speed);
+
+        return bullet;
+    }
 }

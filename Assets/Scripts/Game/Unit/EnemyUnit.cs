@@ -11,13 +11,19 @@ public class EnemyUnit : Unit {
 				Invoke("Die", 5);
 				break;
             case 1:
-                Invoke("Die", 6);
+                Invoke("Die", 12);
                 break;
             case 2:
                 Invoke("Die", 5);
                 break;
             case 3:
                 Invoke("Die", 4);
+                break;
+            case 4:
+                Invoke("Die", 4);
+                break;
+            case 5:
+                Invoke("Die", 9);
                 break;
         }
 		patternSystem = new PatternSystem(patternValue, transform.position);

@@ -6,7 +6,7 @@ public class SlowBullet : Bullet {
 	public override void LogicUpdate() {
 		SetPosition(_position + _dir * (_speed * Time.deltaTime));
 		
-		if(!(_speed <= 60)) _speed -= 1f;
+		if(!(_speed <= 60)) _speed -= 1.5f;
         if (CheckIfOutsideOfScreen())
 			Destroy();
 	}

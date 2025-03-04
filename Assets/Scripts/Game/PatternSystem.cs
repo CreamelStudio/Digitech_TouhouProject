@@ -39,8 +39,12 @@ public class PatternSystem
                 _attackCooldownTimer = 60;
                 break;
             case 4:
-                Debug.Log("Pattern 3 Summon");
+                Debug.Log("Pattern 4 Summon");
                 _attackCooldownTimer = 30;
+                break;
+            case 5:
+                Debug.Log("Pattern 5 Summon");
+                _attackCooldownTimer = 60;
                 break;
         }
     }
@@ -164,10 +168,47 @@ public class PatternSystem
                 _attackCooldownTimer = 80;
                 patternCount++;
                 dirvec = (PlayerUnit._instance.position - position).normalized;
-                bullet = BulletSystem.Get().SpawnNormalBullet("LargeCircle_Green", Constants.Team.Enemy, position, dirvec, 200);
+                bullet = BulletSystem.Get().SpawnNormalBullet("LargeCircle_Green", Constants.Team.Enemy, position, dirvec, 170);
                 bullet.SetZOffset(1);
                 SoundManager.Get().PlaySound("se_tan01", 0.1f);
                 if (patternCount == 2) isCanMove = 0;
+                break;
+            case 5:
+                if (isCanMove == 1) position += new Vector2(0, Time.deltaTime * -240);
+                if (isCanMove == 2) position += new Vector2(0, Time.deltaTime * 120);
+
+                _attackCooldownTimer--;
+                if (_attackCooldownTimer > 0)
+                    return;
+
+                _attackCooldownTimer = 120;
+                patternCount++;
+                for (int i = 0; i < 8; i++)
+                {
+                    dirvec = new Vector2(-0.125f * i, 1 - (0.125f * i));
+                    bullet = BulletSystem.Get().SpawnStopBullet("Bean_Skyblue1", Constants.Team.Enemy, position, dirvec, 200);
+                    bullet.SetZOffset(1);
+                }
+                for (int i = 0; i < 8; i++)
+                {
+                    dirvec = new Vector2(0.125f * i, 1 - (0.125f * i));
+                    bullet = BulletSystem.Get().SpawnStopBullet("Bean_Skyblue1", Constants.Team.Enemy, position, dirvec, 200);
+                    bullet.SetZOffset(1);
+                }
+                for (int i = 0; i < 8; i++)
+                {
+                    dirvec = new Vector2(0.125f * i, -1 + (0.125f * i));
+                    bullet = BulletSystem.Get().SpawnStopBullet("Bean_Skyblue1", Constants.Team.Enemy, position, dirvec, 200);
+                    bullet.SetZOffset(1);
+                }
+                for (int i = 0; i < 8; i++)
+                {
+                    dirvec = new Vector2(-0.125f * i, -1 + (0.125f * i));
+                    bullet = BulletSystem.Get().SpawnStopBullet("Bean_Skyblue1", Constants.Team.Enemy, position, dirvec, 200);
+                    bullet.SetZOffset(1);
+                }
+                SoundManager.Get().PlaySound("se_enep00", 0.5f);
+                if (patternCount == 1) isCanMove = 0;
                 break;
         }
         
