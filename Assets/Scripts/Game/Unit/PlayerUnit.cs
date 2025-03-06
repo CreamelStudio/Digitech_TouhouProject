@@ -7,8 +7,12 @@ public class PlayerUnit : Unit {
 	private int _attackCooldownTimer;
 	private bool _isSlow;
 
+	public bool isGod;
+	private SpriteRenderer sprite;
+
     private void Start()
     {
+		sprite = GetComponent<SpriteRenderer>();
         _instance = this;
     }
 
@@ -120,9 +124,20 @@ public class PlayerUnit : Unit {
 
 	public override void HandleDamaged() {
 		Debug.Log("Player Damaged!");
-	}
+		SoundManager.Get().PlaySound("se_pldead00", 0.6f);
+		isGod = true;
+        sprite.color = new Color(1, 1, 1, 0.5f);
+        Invoke("DisableGod", 3f);
+    }
+
+	public void DisableGod()
+	{
+		isGod = false;
+		sprite.color = new Color(1, 1, 1, 1);
+    }
 
 	public override void HandleDead() {
-		Destroy(this);
+		ScoreSystem._instance.SaveScore();
+        Destroy(this);
 	}
 }

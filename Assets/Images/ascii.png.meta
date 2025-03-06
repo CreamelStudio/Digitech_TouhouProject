@@ -1429,7 +1429,7 @@ TextureImporter:
         width: 15
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1438,6 +1438,72 @@ TextureImporter:
       bones: []
       spriteID: 8477214a2b18f2f4b9894b593958ce9b
       internalID: -1626231002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AsciiM
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbefe758052a294f9ec563d19bb075d
+      internalID: 1192996765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AsciiA
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869adb4f09169164b8374d604611a8ec
+      internalID: -1637096141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AsciiX
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1188d15780927df47976a90e7aece58a
+      internalID: -1333595351
       vertices: []
       indices: 
       edges: []
@@ -1466,13 +1532,16 @@ TextureImporter:
       Ascii7: 622591106
       Ascii8: 1296093275
       Ascii9: 1523045726
+      AsciiA: -1637096141
       AsciiC: -1410713554
       AsciiE: 466193615
+      AsciiM: 1192996765
       AsciiO: -1348355299
       AsciiP: -718741285
       AsciiR: 1160885265
       AsciiS: -1420408919
       AsciiW: 706990416
+      AsciiX: -1333595351
       ascii_0: -8303115011266488855
       ascii_1: 1042461647345507207
       ascii_10: 5049541798666477028
@@ -1506,7 +1575,6 @@ TextureImporter:
       ascii_36: -3109978743984324233
       ascii_37: 2186415433860346039
       ascii_38: -1626231002
-      ascii_39: 1192996765
       ascii_4: 2861611570663502880
       ascii_5: -9193990422838542284
       ascii_6: 7667852563297676370

@@ -9,6 +9,7 @@ public class CollisionSystem
     List<Unit> enemyUnits;
 
     public float bullet1Size = 5f;
+    public float grazeSize = 1.5f;
 
     public void LogicUpdate() {
         playerBullets = BulletSystem._instance._bulletsByTeam[Constants.Team.Enemy];
@@ -17,8 +18,13 @@ public class CollisionSystem
             if(PlayerUnit._instance != null) if (CircleCollider(bullet, bullet1Size, PlayerUnit._instance, PlayerUnit._instance._radius))
             {
                 bullet.isDestroyed = true;
-                PlayerUnit._instance.Damaged(1);
-                PlayerUnit._instance.power -= 3;
+                if(!PlayerUnit._instance.isGod) PlayerUnit._instance.Damaged(1);
+            }
+            else if(!PlayerUnit._instance.isGod && !bullet.isGraze && CircleCollider(bullet, bullet1Size, PlayerUnit._instance, PlayerUnit._instance._radius + grazeSize))
+            {
+                    SoundManager.Get().PlaySound("se_graze", 0.4f);
+                GrazeSystem._instance.GrazeAdd(1);
+                bullet.isGraze = true;
             }
         }
 

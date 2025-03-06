@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public abstract class Bullet {
+	public bool isGraze;
+
 	public Vector2 _position { get; protected set; }
 	protected float _zOffset;
 	protected Vector2 _dir;

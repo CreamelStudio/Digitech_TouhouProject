@@ -53,7 +53,7 @@ public abstract class Unit : MonoBehaviour {
 	public void Damaged(float damage) {
 		_hp -= damage;
 		if (_hp <= 0) {
-			Die();
+            DieWithPlayer();
 		}
 
 		HandleDamaged();
@@ -61,35 +61,46 @@ public abstract class Unit : MonoBehaviour {
 	
 	public abstract void HandleDamaged();
 
-	public void Die() {
+    public void DieWithOver()
+    {
+        isDestroyed = true;
+        HandleDead();
+    }
+
+    public void DieWithPlayer() {
         switch (Random.Range(0, 5))
-		{
+        {
+
+
             case 0:
                 var powerPrefab = Object.Instantiate(_powerItem);
-                powerPrefab.SetPosition(transform.position);
+                powerPrefab.SetPosition(transform.position );
                 powerPrefab.SetSpeed(250);
-				break;
+                break;
             case 1:
                 powerPrefab = Object.Instantiate(_powerItem);
-                powerPrefab.SetPosition(transform.position);
+                powerPrefab.SetPosition(transform.position );
                 powerPrefab.SetSpeed(250);
                 break;
             case 2:
                 powerPrefab = Object.Instantiate(_bigPowerItem);
-                powerPrefab.SetPosition(transform.position);
+                powerPrefab.SetPosition(transform.position );
                 powerPrefab.SetSpeed(250);
                 break;
             case 3:
                 var scorePrefab = Object.Instantiate(_scoreItem);
-                scorePrefab.SetPosition(transform.position);
+                scorePrefab.SetPosition(transform.position );
                 scorePrefab.SetSpeed(250);
+                PointSystem._instance.pointMaxAdd(1);
                 break;
             case 4:
                 scorePrefab = Object.Instantiate(_scoreItem);
-                scorePrefab.SetPosition(transform.position);
+                scorePrefab.SetPosition(transform.position );
                 scorePrefab.SetSpeed(250);
+                PointSystem._instance.pointMaxAdd(1);
                 break;
         }
+
         
         isDestroyed = true;
         HandleDead();
@@ -97,3 +108,42 @@ public abstract class Unit : MonoBehaviour {
 
 	public abstract void HandleDead();
 }
+/*
+ int randomTemp = Random.Range(2, 7);
+		for(int i=0;i< randomTemp; i++)
+		{
+			Vector3 randomVec = new Vector3(Random.Range(-40, 40), Random.Range(-20, 20), 0);
+            switch (Random.Range(0, 5))
+            {
+				
+
+                case 0:
+                    var powerPrefab = Object.Instantiate(_powerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+                case 1:
+                    powerPrefab = Object.Instantiate(_powerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+                case 2:
+                    powerPrefab = Object.Instantiate(_bigPowerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+                case 3:
+                    var scorePrefab = Object.Instantiate(_scoreItem);
+                    scorePrefab.SetPosition(transform.position + randomVec);
+                    scorePrefab.SetSpeed(250);
+                    PointSystem._instance.pointMaxAdd(1);
+                    break;
+                case 4:
+                    scorePrefab = Object.Instantiate(_scoreItem);
+                    scorePrefab.SetPosition(transform.position + randomVec);
+                    scorePrefab.SetSpeed(250);
+					PointSystem._instance.pointMaxAdd(1);
+                    break;
+            }
+        }
+ */

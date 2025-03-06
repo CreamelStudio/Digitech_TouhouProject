@@ -12,7 +12,9 @@ public class ScoreItem : MonoBehaviour
         transform.position = transform.position + Vector3.down * (_speed * Time.deltaTime);
         if(GameSystem._instance._collisionSystem.CircleCollider(transform.position, radius, PlayerUnit._instance.position, PlayerUnit._instance._radius))
         {
+            scoreValue = Random.Range(111, 999) * GrazeSystem._instance.graze;
             ScoreSystem._instance.ScoreUp(scoreValue);
+            PointSystem._instance.pointAdd(1);
             Destroy(gameObject);
         }
         if (CheckIfOutsideOfScreen())
