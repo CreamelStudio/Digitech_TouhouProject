@@ -19,18 +19,11 @@ public class PowerSystem : MonoBehaviour
 
     private void InitScoreText()
     {
-        if (power == 128){
-            backgroundBoard.localScale = new Vector3((139.0901f / 128f) * power, 18.3f, 1);
-            for(int i = 0; i < maxImage.Length; i++){
-                countObj[i].SetActive(true);
-                count[i].sprite = maxImage[i];
-                Debug.Log($"Count{i}");
-            }
-        }
+        if (power == 128) for(int i = 0; i < maxImage.Length; i++) count[i].sprite = maxImage[i];
         else
         {
             string formatScore = power.ToString();
-            backgroundBoard.localScale = new Vector3((139.0901f / 128f) * power, 18.3f, 1);
+            backgroundBoard.localScale = new Vector3((139.0901f / 100f) * power, 18.3f, 1);
 
             for (int i = 0; i < count.Length; i++)
             {
