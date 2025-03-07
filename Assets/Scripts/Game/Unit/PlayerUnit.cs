@@ -10,8 +10,13 @@ public class PlayerUnit : Unit {
 	public bool isGod;
 	private SpriteRenderer sprite;
 
+	private PowerItem _powerItem;
+    private PowerItem _bigPowerItem;
+
     private void Start()
     {
+		_powerItem = AssetManager.Get().GetPrefab("PowerItem").GetComponent<PowerItem>();
+        _bigPowerItem = AssetManager.Get().GetPrefab("BigPowerItem").GetComponent<PowerItem>();
 		sprite = GetComponent<SpriteRenderer>();
         _instance = this;
     }
@@ -44,6 +49,7 @@ public class PlayerUnit : Unit {
 
 	public override void UpdateAttack() {
 		if (power <= 0) power = 0;
+		if (power > 128) power = 128;
 		PowerSystem._instance.PowerSet(power);
 		_attackCooldownTimer--;
 		if (_attackCooldownTimer > 0)
@@ -123,12 +129,53 @@ public class PlayerUnit : Unit {
 	}
 
 	public override void HandleDamaged() {
+		
+		if(power >= 10){
+			power -= 10;
+			SpawnPower(7);
+		}
+		else if(power != 0){
+			power -= 3;
+			SpawnPower(3);
+		}
 		Debug.Log("Player Damaged!");
 		SoundManager.Get().PlaySound("se_pldead00", 0.6f);
 		isGod = true;
         sprite.color = new Color(1, 1, 1, 0.5f);
         Invoke("DisableGod", 3f);
+		
     }
+
+	private void SpawnPower(int maxPowerCount){
+		int randomTemp = Random.Range(2, maxPowerCount);
+		for(int i=0;i< randomTemp; i++)
+		{
+			Vector3 randomVec = new Vector3(Random.Range(-40, 40), Random.Range(-20, 20), 0) + new Vector3(0, 180, 0);
+            switch (Random.Range(0, 4))
+            {
+                case 0:
+                    var powerPrefab = Object.Instantiate(_powerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+                case 1:
+                    powerPrefab = Object.Instantiate(_powerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+				case 2:
+                    powerPrefab = Object.Instantiate(_powerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+                case 3:
+                    powerPrefab = Object.Instantiate(_bigPowerItem);
+                    powerPrefab.SetPosition(transform.position + randomVec);
+                    powerPrefab.SetSpeed(250);
+                    break;
+            }
+        }
+	}
 
 	public void DisableGod()
 	{
