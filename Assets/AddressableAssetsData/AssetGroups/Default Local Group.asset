@@ -50,11 +50,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1ef37b1b67956044081c75119082b630
-    m_Address: DeadParticle1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1f54299f946d1b54487756c1af2ca020
     m_Address: se_kira00
     m_ReadOnly: 0
