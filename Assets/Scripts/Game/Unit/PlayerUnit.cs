@@ -117,12 +117,13 @@ public class PlayerUnit : Unit {
                 if (_isSlow)
 				{
                     var enemyUnits = UnitSystem._instnace._unitsByTeam[Constants.Team.Enemy];
-                    Vector2 dirVec = enemyUnits[Random.Range(0, enemyUnits.Count)].position - (new Vector2(transform.position.x, transform.position.y) + new Vector2(12, 0));
-                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-12, 0), dirVec, 800);
+                    Vector2 dirVecA = (enemyUnits[Random.Range(0, enemyUnits.Count)].position - (new Vector2(transform.position.x, transform.position.y) + new Vector2(-12, 0))).normalized;
+                    Vector2 dirVecB = (enemyUnits[Random.Range(0, enemyUnits.Count)].position - (new Vector2(transform.position.x, transform.position.y) + new Vector2(12, 0))).normalized;
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Circle_White", Constants.Team.Player, position + new Vector2(-12, 0), dirVecA, 800);
                     bullet.SetZOffset(1);
                     bullet.bulletPrefab.SetSpriteAlpha(0.5f);
 
-                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(12, 0), dirVec, 800);
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Circle_White", Constants.Team.Player, position + new Vector2(12, 0), dirVecB, 800);
                     bullet.SetZOffset(1);
 
                 }
