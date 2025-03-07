@@ -46,7 +46,7 @@ public class CollisionSystem
     #region Circle Collider
     public bool CircleCollider(Unit unit1, float radius1, Unit unit2, float radius2)
     {
-        if(Vector2.Distance(unit1.position, unit2.position) <= radius1 + radius2)
+        if(Vector2.Distance(unit1.transform.position, unit2.transform.position) <= radius1 + radius2)
         {
             return true;
         }
@@ -64,7 +64,7 @@ public class CollisionSystem
 
     public bool CircleCollider(Bullet bullet1, float radius1, Unit unit2, float radius2)
     {
-        if (Vector2.Distance(bullet1._position, unit2.position) <= radius1 + radius2)
+        if (Vector2.Distance(bullet1._position, unit2.transform.position) <= radius1 + radius2)
         {
             return true;
         }
@@ -73,7 +73,7 @@ public class CollisionSystem
 
     public bool CircleCollider(Unit unit1, float radius1, Bullet bullet2, float radius2)
     {
-        if (Vector2.Distance(unit1.position, bullet2._position) <= radius1 + radius2)
+        if (Vector2.Distance(unit1.transform.position, bullet2._position) <= radius1 + radius2)
         {
             return true;
         }

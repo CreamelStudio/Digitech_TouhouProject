@@ -21,7 +21,6 @@ public class BulletSystem {
 	public void Dispose() {
 		_instance = null;
 	}
-
 	public void LogicUpdate() {
 		for (var team = 0; team < 2; team++) {
 			var bullets = _bulletsByTeam[team];

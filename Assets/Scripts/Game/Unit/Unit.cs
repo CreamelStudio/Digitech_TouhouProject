@@ -11,9 +11,9 @@ public abstract class Unit : MonoBehaviour {
 	public bool isDestroyed { get; private set; }
 
 	protected UnitMovementAnimator _movementAnimator;
-	private PowerItem _powerItem;
-    private PowerItem _bigPowerItem;
-    private ScoreItem _scoreItem;
+	public PowerItem _powerItem { get; private set; }
+    public PowerItem _bigPowerItem { get; private set; }
+    public ScoreItem _scoreItem { get; private set; }
 
 
     private void Awake() {
@@ -108,42 +108,3 @@ public abstract class Unit : MonoBehaviour {
 
 	public abstract void HandleDead();
 }
-/*
- int randomTemp = Random.Range(2, 7);
-		for(int i=0;i< randomTemp; i++)
-		{
-			Vector3 randomVec = new Vector3(Random.Range(-40, 40), Random.Range(-20, 20), 0);
-            switch (Random.Range(0, 5))
-            {
-				
-
-                case 0:
-                    var powerPrefab = Object.Instantiate(_powerItem);
-                    powerPrefab.SetPosition(transform.position + randomVec);
-                    powerPrefab.SetSpeed(250);
-                    break;
-                case 1:
-                    powerPrefab = Object.Instantiate(_powerItem);
-                    powerPrefab.SetPosition(transform.position + randomVec);
-                    powerPrefab.SetSpeed(250);
-                    break;
-                case 2:
-                    powerPrefab = Object.Instantiate(_bigPowerItem);
-                    powerPrefab.SetPosition(transform.position + randomVec);
-                    powerPrefab.SetSpeed(250);
-                    break;
-                case 3:
-                    var scorePrefab = Object.Instantiate(_scoreItem);
-                    scorePrefab.SetPosition(transform.position + randomVec);
-                    scorePrefab.SetSpeed(250);
-                    PointSystem._instance.pointMaxAdd(1);
-                    break;
-                case 4:
-                    scorePrefab = Object.Instantiate(_scoreItem);
-                    scorePrefab.SetPosition(transform.position + randomVec);
-                    scorePrefab.SetSpeed(250);
-					PointSystem._instance.pointMaxAdd(1);
-                    break;
-            }
-        }
- */

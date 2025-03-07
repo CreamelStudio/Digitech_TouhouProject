@@ -6,13 +6,19 @@ public class PlayerUnit : Unit {
 	public int powerUpCount;
 	private int _attackCooldownTimer;
 	private bool _isSlow;
-
-	public bool isGod;
+    private DeadParticle1 _deadParticle1;
+    private DeadParticle1 _bulletDeadParticle;
+    private SkillParticle _skillParticle;
+    public bool isGod;
 	private SpriteRenderer sprite;
 
     private void Start()
     {
-		sprite = GetComponent<SpriteRenderer>();
+        SkillSystem._instance.SkillSet(4);
+        _deadParticle1 = AssetManager.Get().GetPrefab("DeadParticle1").GetComponent<DeadParticle1>();
+        _bulletDeadParticle = AssetManager.Get().GetPrefab("BulletDeadParticle").GetComponent<DeadParticle1>();
+        _skillParticle = AssetManager.Get().GetPrefab("SkillParticle").GetComponent<SkillParticle>();
+        sprite = GetComponent<SpriteRenderer>();
         _instance = this;
     }
 
@@ -53,6 +59,16 @@ public class PlayerUnit : Unit {
 		{
             SoundManager.Get().PlaySound("se_powerup", 0.35f);
             powerUpCount++;
+        }
+
+		if (Input.GetKeyDown(KeyCode.X) && SkillSystem._instance.skill != 0 && !isGod)
+		{
+            SkillSystem._instance.SkillAdd(-1);
+            var skillPrefab = Object.Instantiate(_skillParticle);
+            isGod = true;
+            sprite.color = new Color(1, 1, 1, 0.5f);
+            Invoke("DisableGod", 3f);
+            Invoke("SkillUse", 1f);
         }
 
         if (Input.GetKey(KeyCode.Z)) {
@@ -100,11 +116,13 @@ public class PlayerUnit : Unit {
 
                 if (_isSlow)
 				{
-                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-12, 0), Vector2.up, 800);
+                    var enemyUnits = UnitSystem._instnace._unitsByTeam[Constants.Team.Enemy];
+                    Vector2 dirVec = enemyUnits[Random.Range(0, enemyUnits.Count)].position - (new Vector2(transform.position.x, transform.position.y) + new Vector2(12, 0));
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(-12, 0), dirVec, 800);
                     bullet.SetZOffset(1);
                     bullet.bulletPrefab.SetSpriteAlpha(0.5f);
 
-                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(12, 0), Vector2.up, 800);
+                    bullet = BulletSystem.Get().SpawnNormalBullet("Reimu_Amulet", Constants.Team.Player, position + new Vector2(12, 0), dirVec, 800);
                     bullet.SetZOffset(1);
 
                 }
@@ -122,8 +140,22 @@ public class PlayerUnit : Unit {
         }
 	}
 
+    public void SkillUse()
+    {
+        var enemyBullet = BulletSystem._instance._bulletsByTeam[Constants.Team.Enemy];
+        for (int i = 0; i < enemyBullet.Count; i++)
+        {
+            var powerPrefab = Object.Instantiate(_bulletDeadParticle);
+            powerPrefab.transform.position = enemyBullet[i]._position;
+            enemyBullet[i].isDestroyed = true;
+        }
+        var enemyUnits = UnitSystem._instnace._unitsByTeam[Constants.Team.Enemy];
+        for (int i = 0; i < enemyUnits.Count; i++) enemyUnits[i].DieWithPlayer();
+    }
+
 	public override void HandleDamaged() {
-		Debug.Log("Player Damaged!");
+        SkillSystem._instance.SkillSet(4);
+        Debug.Log("Player Damaged!");
 		SoundManager.Get().PlaySound("se_pldead00", 0.6f);
 		isGod = true;
         sprite.color = new Color(1, 1, 1, 0.5f);

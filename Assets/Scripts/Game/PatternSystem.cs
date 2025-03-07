@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class PatternSystem
 {
@@ -209,6 +210,32 @@ public class PatternSystem
                 }
                 SoundManager.Get().PlaySound("se_enep00", 0.5f);
                 if (patternCount == 1) isCanMove = 0;
+                break;
+            case 7:
+                patternCount++;
+                Vector3 _p1 = new Vector3(-256, 107, 0);
+                Vector3 _p2 = new Vector3(-78, 228, 0);
+                Vector3 _p3 = new Vector3(270, 50, 0);
+                if (patternCount < 180)
+                {
+                    Vector3 p4 = Vector3.Lerp(_p1, _p2, patternCount / 180f);
+                    Vector3 p5 = Vector3.Lerp(_p2, _p3, patternCount / 180f);
+                    position = Vector3.Lerp(p4, p5, patternCount / 180f);
+                    return;
+                }
+                break;
+            case 8:
+                patternCount++;
+                _p1 = new Vector3(256, 107, 0);
+                _p2 = new Vector3(78, 228, 0);
+                _p3 = new Vector3(-270, 50, 0);
+                if (patternCount < 180)
+                {
+                    Vector3 p4 = Vector3.Lerp(_p1, _p2, patternCount / 180f);
+                    Vector3 p5 = Vector3.Lerp(_p2, _p3, patternCount / 180f);
+                    position = Vector3.Lerp(p4, p5, patternCount / 180f); 
+                    return;
+                }
                 break;
         }
         

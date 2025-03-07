@@ -130,6 +130,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b3cef56c814bff498a5a6ba202d97f4
+    m_Address: Unit_Enemy_ToRight
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c81ff3fd65dae3408d80b873684ce32
+    m_Address: SkillParticle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ec527d6b0f09114a879f52099e07007
     m_Address: se_bonus2
     m_ReadOnly: 0
@@ -137,6 +147,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 95401de514b856f44975d68d6f46a29e
     m_Address: se_lazer00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d46a65844fcab547aeb87d89f5c0dae
+    m_Address: Unit_Enemy_ToLeft
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -162,6 +177,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: afdcea0917783d2499761f8d7ff084c6
     m_Address: se_tan01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdf411488034d4e49a6c31a4f0c04266
+    m_Address: BulletDeadParticle
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
